@@ -1,0 +1,32 @@
+name: Keep Page Active
+
+on:
+  schedule:
+    # Cada 10 minutos, de lunes a viernes (0-6, donde 1=lunes, 5=viernes)
+    # El horario es UTC, ajusta según tu zona horaria
+    - cron: '*/10 6-23 * * 1-5'  # Ejecuta de 00:00 a 17:00 hora México
+  
+  # Permite ejecutar manualmente desde GitHub
+  workflow_dispatch:
+
+jobs:
+  visit-page:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 📥 Checkout code
+      uses: actions/checkout@v3
+      
+    - name: 🐍 Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        
+    - name: 📦 Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        
+    - name: 🌐 Visit page
+      run: |
+        python keep_active.py
