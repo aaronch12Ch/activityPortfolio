@@ -2,11 +2,10 @@ name: Keep Page Active
 
 on:
   schedule:
-    # Cada 10 minutos, de lunes a viernes (0-6, donde 1=lunes, 5=viernes)
-    # El horario es UTC, ajusta según tu zona horaria
-    - cron: '*/10 6-23 * * 1-5'  # Ejecuta de 00:00 a 17:00 hora México
-  
-  # Permite ejecutar manualmente desde GitHub
+    # Cada 10 minutos de 8 AM a 10 PM (hora México UTC-6)
+    # En UTC: 14:00-23:59 (lunes-viernes) y 00:00-04:00 (martes-sábado)
+    - cron: '*/10 14-23 * * 1-5'
+    - cron: '*/10 0-4 * * 2-6'
   workflow_dispatch:
 
 jobs:
@@ -25,7 +24,7 @@ jobs:
     - name: 📦 Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
+        pip install requests
         
     - name: 🌐 Visit page
       run: |
