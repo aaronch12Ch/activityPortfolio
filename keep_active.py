@@ -21,7 +21,7 @@ def visit_page(url):
 
 if __name__ == "__main__":
     # ⚠️ CAMBIA ESTA URL POR LA TUYA
-    URL = "https://www.ejemplo.com"
+    URL = "https://v0-portfolio-website-with-admin-git-main-aaronch12chs-projects.vercel.app/"
     
     print("=" * 50)
     print("Iniciando visita a la página...")
@@ -32,16 +32,3 @@ if __name__ == "__main__":
     print("=" * 50)
     print("Proceso completado")
     print("=" * 50)
-```
-
-4. **MUY IMPORTANTE**: Cambia `https://www.ejemplo.com` por la URL de tu página
-5. Haz clic en **"Commit changes..."**
-6. En el mensaje deja "Create keep_active.py" y haz clic en **"Commit changes"**
-
-## Paso 4: Crear archivo de dependencias
-
-1. Haz clic nuevamente en **"Add file"** → **"Create new file"**
-2. Nombre del archivo: `requirements.txt`
-3. Escribe solo esto:
-```
-requests
