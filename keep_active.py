@@ -20,8 +20,7 @@ def visit_page(url):
         return None
 
 if __name__ == "__main__":
-    # ⚠️ CAMBIA ESTA URL POR LA TUYA
-    URL = "https://v0-portfolio-website-with-admin-git-main-aaronch12chs-projects.vercel.app/"
+    # ⚠️ CAMBIA ESTA URL POR "
     
     print("=" * 50)
     print("Iniciando visita a la página...")
